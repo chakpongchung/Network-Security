@@ -1,0 +1,8 @@
+#! /bin/sh
+if test $# -eq 0 
+then
+     echo "error, usage: printcertreq-sh X  where cert complte name is X_certreq.pem"
+     exit 0;
+fi
+
+openssl req -in $1_certreq.pem -text -noout

@@ -1,0 +1,14 @@
+#! /bin/sh
+# syntax: readsignmail   <file>
+
+if test $# -le 0
+then
+  echo  "syntax: readsignmail   <file>"
+  exit
+fi
+
+RANDFILE=randomfile
+export RANDFILE
+openssl smime -CAfile ca_cert.pem -verify  -in $1 -out $1.txt -signer sender_cert.pem
+openssl x509 -in sender_cert.pem -text -noout | grep Subject:
+more $1.txt

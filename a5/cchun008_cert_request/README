@@ -1,0 +1,33 @@
+// all shells are stored under shells.
+// edit file: myopenssl.cnf to particular path and names.
+
+//*** This is for ca
+> setup  //  create necessary files.
+> genca  //  create ca keys (stores private key under ca_private_key) 
+            //  and certificate (ca_cert.pem).
+> printcert ca        // print cert ca_cert.pem
+
+//*** This is for students
+> cd <student>_cert_request
+> gencertreq <student>    // generate cs772_certreq.pem 
+                         // and private key cs772_privatekey.pem
+> printcertreq <student>  // print cs772_certreq.pem
+> submit cs772           // submit cs772_certreq.pem
+
+//***  This is for ca
+> issuecert <student>     // sign <student>_cerreq.pem 
+                         // to produce signed_requests/<student>_cert.pem and
+                         // issued_certs/01.pem, 01 is serial number of cert.
+> printcert  <student>     // print cert <student>_cert.pem
+> printcert  issued_certs/01                 // print cert 01.pem
+
+//*** to generate certs: server.pem, client.pem and root.pem for ssl examples.
+> mkdir  server_cert_request
+> cd server_cert_request
+> cp ../shells/genserver_certreq .
+> genserver_certreq 
+//*** to convert a cert to a certreq
+> certoreq cs772
+//*** to resign a cert, e.g., renew the cert
+> resign cs772
+

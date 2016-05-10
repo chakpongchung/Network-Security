@@ -1,0 +1,19 @@
+#! /bin/sh
+OPENSSL_CONF=`pwd`/myopenssl.cnf
+RANDFILE=randomfile
+export OPENSSL_CONF RANDFILE
+if test $# -eq 0 
+then
+     echo "error, usage: issuecert.sh X  where cert complte name is X_certreq.pem"
+     exit 0;
+fi
+
+openssl ca  -in submitted_requests/$1_certreq.pem -out signed_requests/$1_cert.pem -notext 
+cp signed_requests/$1_cert.pem $HOME/public_html/fall14/PKI_certificates/students/$1_cert.pem
+chmod a+rx $HOME/public_html/fall14/PKI_certificates/students/$1_cert.pem
+echo "Your cerifiacte has been signed and is ready at \n
+$HOME/public_html/fall14/PKI_certificates/students/$1_cert.pem \n
+Also copy the CA certificate at  \n
+$HOME/public_html/fall14/PKI_certificates/students/ca_cert.pem" > t$$
+mail -s "signed certificate"  $1@cs.odu.edu < t$$
+rm t$$

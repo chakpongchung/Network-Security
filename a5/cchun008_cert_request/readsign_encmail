@@ -1,0 +1,14 @@
+#! /bin/sh
+# syntax: readsign_encmail  <receipient-login>   <file>
+if test $# -le 1
+then
+  echo  "syntax: readsign_encmail  <receipient-login>   <file>"
+  exit
+fi
+
+RANDFILE=randomfile
+export RANDFILE
+openssl smime -decrypt -out $2.sig -des3 -in $2 -recip $1_cert.pem  -inkey $1_privatekey.pem
+openssl smime -CAfile ca_cert.pem -verify  -in $2.sig -out $2.txt -signer sender_cert.pem
+openssl x509 -in sender_cert.pem -text -noout | grep Subject:
+more $2.txt

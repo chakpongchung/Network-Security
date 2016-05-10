@@ -1,0 +1,86 @@
+//*********************************************************************************************************** 
+2015 cs772 network security assignment 2
+submitted by CHAK PONG CHUNG, UIN:01009608
+EMAIL:chakpongchung@gmail.com
+
+for the python code for DES,IDEA and AES, check out the following link
+
+http://nbviewer.ipython.org/gist/chakpongchung/88d880bb69b676ec8a07
+
+//***********************************************************************************************************  
+
+All data are given in HEX. 
+Show your results in HEX of the following:
+ 
+1.     1st round of  DES  if
+The input data block is: 5500 0000 0000 0055   &
+The encryption key is:   1F1F 1F1F 0F0F 0F0F
+
+ANSWER:['0x0', '0x0', '0x0', '0x0', '0x0', '0x0', '0x0', '0x0', '0x7', '0x9', '0x5', '0xb', '0x7', '0xa', '0x1', '0xc']
+ 
+2.     1st  two  rounds of  IDEA if  
+The input  data block is:  0001 0000 0000 0001        &
+The encryption key is:     0001 0000 0000 0001 0001 0001 1110 0111 
+ 
+ANSWER: 0x3 0x2 0x3 0x2
+ 
+3.     1st round of  AES-128  if
+The input data block is: FFFF FFFF FFFF FFFF 0000 0000 0000 0000
+The encryption key is:   0000 0000 0000 0000 0000 0000 0000 0000
+
+//***********************************************************************************************************  
+PS: I find out a formula to generate the mix column table, thats why I am able to program the solution
+(you dont want to input the numbers one by one, which is error-prone~~~).
+Check my a2_3.ipynb for that formula should you be interested in. Future students may like it.
+//*********************************************************************************************************** 
+
+ANSWER:	[[0x16, 0xfc, 0x63, 0x89], [0xfc, 0x63, 0x89, 0x16], [0x63, 0x89, 0x16, 0xfc], [0x89, 0x16, 0xfc, 0x63]]
+
+4.     Consider the following Kiddie Encryption Algorithm (KEA):
+The Input data block size and encryption key length is 8 bits & the number of rounds is 2.
+ 
+The steps of each round are:
+1. XOR the data block with the encryption key.
+2. Substitute each nibble (4 bits) of the result using the following S-table.
+3. Permute the output  & the key by swapping their two nibbles.
+ 
+S-Table
+0   1
+1   5
+2   B
+3   2
+4   E
+5   A
+6   8
+7   4
+8   F
+9   7
+A   3
+B   D
+C   9
+D   C
+E   0
+F   6
+
+ 
+Use KEA to encrypt the message:  ¡°AAAA¡± using the following chaining methods,
+assuming the IV is ¡°BB¡± and the key is ¡°CC¡±
+ 
+//**************************************************************************** 
+For details, please look at my paperwork scanned of my solutions step by step
+//****************************************************************************
+1.     ECB (Electronic Code Book)
+ANSWER:EEEE
+
+2.     CBC (Cipher Block Chaining)
+ANSWER:11FF
+
+3.     OFB (Output Feedback Mode)
+ANSWER:55AA
+
+4.     CFB (Cipher Feedback Mode)
+ANSWER:5577
+
+5.     CTR  (Counter Mode)
+ANSWER:5556
+ 

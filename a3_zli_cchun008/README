@@ -1,0 +1,71 @@
+
+CHAK PONG CHUNG
+UIN:01009608
+
+In order to generate all the files for submission, change the part accordingly
+":Y:->:C:" and ":C:->:Y:" in 'y1.sh', 'c1.sh' and 'y2.sh'
+
+Then run in the terminal:
+# bash y1.sh
+
+# bash c1.sh
+(this part is not needed to generate the submitted files, but is helpful you have FriendPrivateKey, which is to "create" artificial friend)
+
+# bash y2.sh
+
+Then you will see 'Y_C.tar'
+
+
+
+***********************************************************************************************
+Following is the assignment description
+***********************************************************************************************
+CS 772
+Assignment #3
+Due Midnight, Thursday Nov 5, 2015
+
+Message Digest   has many applications among which are:  Encryption & Message Authentication.
+ 
+In this assignments, let:
+Y :   You
+C :  Classmate in this course
+G :  Grader (cs772)
+ 
+Encryption: XOR  the plain message with a Pad  (using fxorEncDecBase64.py  ).
+Pad Generation: MD4 is used for generating a pad (using  genPad.sh ).
+Message Authentication: HMAC/MD4 (using openssl ).
+ 
+Y:
+ 
+1.     Edit a message M1 of at least 20 bytes to send C
+2.     Use the password  P1=“:Y:->:C:” to generate a onetime pad to
+encrypt  M1 and save it  in  file: M1.base64
+3.     Use HMAC to authenticate M1  with P1.
+Use Y’s  private key to sign the HMAC and  save it in a file: M1Sig.base64.
+4.     Email  C  the two files  M1.base64 & M1Sig.base64.
+ 
+C:
+ 
+1.     Decrypt M.base64 and read M1.
+2.     Verify the signature  and Authenticate M1Sig.base64 
+3.     Edit a reply M2 that have of at least 20 new byes followed by the received plain message M1.
+4.     Use  the password P2= “:C:->:Y:”  to  generate a onetime pad to
+eencrypt M2  and save it  in  file: M2.base64
+5.     Use HMAC to authenticate M2  with P2.
+Use C’s  private key to sign the HMAC and  save it in a file: M2Sig.base64.
+6.     Email  Y  the two files  M2.base64 & M2Sig.base64.
+ 
+Y:   
+ 
+1.     Decrypt M2.base64 and read M2.
+2.     Verify the signature  and Authenticate M2Sig.base64 
+3.     Edit a summary message M3 that have of at least 20 new byes
+followed by the received plain message M2.
+4.     Use  the password  P3=“:Y:->:G:”  to  generate a onetime pad  to
+encrypt M3  and save it  in  file: M3Enc.base64
+5.     Use HMAC to authenticate  M3  with P3.
+Use Y’s  private key to sign the HMAC and  save it in a file: M3Sig.base64.
+ 
+6.  tar -cf Y_C.tar  README  M1.base64  M1Sig.base64    M2.base64  M2Sig.base64    M3.base64  M3Sig.base64
+ 
+6.     Submit    Y_C.tar to cs772   under Assignment  #3.

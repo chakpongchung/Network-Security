@@ -1,0 +1,16 @@
+#! /bin/sh
+# syntax: zip_readsign_encmail  <receipient-login>   <file>
+if test $# -le 1
+then
+  echo  "syntax:  zip_readsign_encmail  <receipient-login>   <file>"
+  exit
+fi
+
+RANDFILE=randomfile
+export RANDFILE
+openssl smime -decrypt -out $2.sig -des3 -in $2 -recip $1_cert.pem  -inkey $1_privatekey.pem
+openssl smime -CAfile ca_cert.pem -verify  -in $2.sig -out $2.base64 -signer file.pem
+openssl x509 -in file.pem -text -noout | grep Subject:
+openssl enc -base64  -d -in $2.base64 -out $2.zip
+unzip $2.zip
+rm $2.sig $2.base64 $2.zip

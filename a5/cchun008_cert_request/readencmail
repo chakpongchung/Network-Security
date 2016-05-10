@@ -1,0 +1,14 @@
+#! /bin/sh
+# syntax: readencmail  <receipient-login>   <file>
+if test $# -le 1
+then
+  echo  "syntax: readencmail  <receipient-login>   <file>"
+  exit
+fi
+
+RANDFILE=randomfile
+export RANDFILE
+openssl smime -decrypt -out $2.txt -des3 -in $2 -recip $1_cert.pem -inkey $1_privatekey.pem
+# openssl smime -decrypt -out $2.txt -des3 -in $2 -inkey $1_privatekey.pem
+# more $2.txt
+

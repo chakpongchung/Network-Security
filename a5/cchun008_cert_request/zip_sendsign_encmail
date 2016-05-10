@@ -1,0 +1,16 @@
+#! /bin/sh
+# syntax: zip_sendsign_encmail  <receipient-login>   <file>    <sender_login>
+if test $# -le 1
+then
+  echo  "syntax: zip_sendsign_encmail  <receipient-login>   <file>    <sender_login>"
+  exit
+fi
+
+RANDFILE=randomfile
+export RANDFILE
+zip    ZiSiEn  $2 
+openssl enc -base64 -e -out ZiSiEn -in ZiSiEn.zip
+openssl smime -sign -in ZiSiEn -out ZiSiEn.sig -signer $3_cert.pem -inkey $3_privatekey.pem
+openssl smime -encrypt -in ZiSiEn.sig -des3 -out ZiSiEn $1_cert.pem
+Mail -s "submission of A5" $1 < ZiSiEn
+rm ZiSiEn.zip ZiSiEn.sig 

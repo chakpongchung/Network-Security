@@ -1,0 +1,50 @@
+[ ca ]
+default_ca 		= wahabca
+
+[ wahabca ]
+dir 			= /home/cs472/public_html/PKI/fall08
+certificate 		= $dir/ca_cert.pem
+database 		= $dir/index.txt
+new_certs_dir 		= $dir/issued_certs
+private_key 		= $dir/ca_private_key/ca_key.pem
+serial 			= $dir/serial
+RANDFILE		= $dir/randomfile   
+default_days    	= 365    
+default_crl_days	= 7    
+default_md      	= md5  
+
+
+policy 			= wahabca_policy
+x509_extensions 	= certificate_extensions
+
+[ wahabca_policy ]
+commonName 		= supplied
+stateOrProvinceName 	= supplied
+countryName 		= supplied
+emailAddress 		= optional
+organizationName 	= supplied
+organizationalUnitName 	= optional
+
+[ certificate_extensions ]
+basicConstraints 	= CA:false
+
+[ req ]
+default_bits 		= 1024
+default_keyfile 	= /home/cs472/public_html/PKI/fall08/ca_private_key/ca_key.pem
+default_md 		= md5
+
+prompt = no
+distinguished_name 	= root_ca_distinguished_name
+
+x509_extensions 	= root_ca_extensions
+
+[ root_ca_distinguished_name ]
+commonName 		= Dr. Wahab
+stateOrProvinceName 	= Virginia
+countryName 		= US
+emailAddress 		= wahab@cs.odu.edu
+organizationName 	= Old Dominion University
+
+[ root_ca_extensions ]
+basicConstraints 	= CA:true
+

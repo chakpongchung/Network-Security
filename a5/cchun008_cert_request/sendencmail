@@ -1,0 +1,11 @@
+#! /bin/sh
+# syntax: sendencmail  <receipient-login>   <file>
+if test $# -le 1
+then
+  echo  "syntax: sendencmail  <receipient-login>   <file>"
+  exit
+fi
+RANDFILE=randomfile
+export RANDFILE
+openssl smime -encrypt -in $2 -des3 -out $2.enc $1_cert.pem
+# mail $1 < $2.enc

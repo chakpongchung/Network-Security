@@ -1,0 +1,63 @@
+Hello Dr.Wahab,
+
+The answer for q1 is in "q1.ods", I created a excel sheet for the Euclid's algorithm for the SID.
+
+The answer for q2 is in "q2".
+
+To generate the submitted files, you can run "bash submit.sh"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+********************************************************
+
+CS772
+Assignment #4
+Due Midnight, Thursday Nov. 19, 2015
+ 
+Q1: Euclid’s Algorithm
+ 
+Each of you is assigned two 6-digits distinct primes p & q.
+File  RandomPrimes  contain  your assigned  p & q values.
+ 
+1.  Compute n = p.q & Ø(n) = (p-1)(q-1). 
+2.  Use e =65537
+4.  Use Euclid’s Algorithm to compute d, the exponentiative inverse of e     i.e., e.d = 1 mod Ø(n).
+5.  Compute SID, the signed value of your ODU 8-digits  ID using your computed private key  <d,n>.
+
+Q2:  Zero Knowledge Proof
+
+The Graph isomorphism problem is an example of Zero Knowledge Proof Systems.
+The following is Dr. Wahab’s  public key graphs. 
+Find his private key (i.,e., the mapping between the two graphs).
+
+Submission:
+ 
+·        tar your files:  README and all relevant files of your solutions to  Q1 and Q2.
+in a file called <login>.tar  where  login is your unix login name.
+ 
+·        Use Diffie-Hellman with  p = 104729  and g = 104723 to generate a shared secret  DHS  between you and cs772.
+File  RandomPrimes  contain  the  random secrets.
+ 
+·        Use DES to encrypt file <login>.tar  using  DHS  and save the result in <login>_Tar.base64
+·        Use HMAC to authenticate  file <login>.tar  using DHS  and save the result in <login>_Tar.hmac
+·        tar  cf <login>-SID.tar  <login>_Tar.base64  <login>_Tar.hmac
+·        Submit    <login>-SID.tar    to  cs772   under Assignment  #4.
+·        To test your submission:
+cd  /home/cs772/public_html/fall15/assignments/a4/gradingScripts 
+and follow the instructions in README_grade

@@ -1,0 +1,28 @@
+:
+:Q1: The values of each persons p and q are listed below. 
+:Q2: Use Diffie-Hellman with  p = 104729  and g = 104723 
+:    to generate a shared secret YG  between you and cs772. 
+:    The values of dhS for each person is listed bellow.
+:
+:login:		p  	q 	   	dhS
+:----------------------------------------------
+cs476:		104561	104579 		104593 
+cs772:		104549	104551          104347 
+cs779:		104597	104623		104639 
+wahab:		104723 	104729 		104327 
+
+aalmutai:	104561  104579		104369 
+ayanamad:	104593	104597		104381 
+balkh:		104623	104639		104383 
+cchun008:	104651	104659		104393 
+halfuray:	104677	104681 		104399 
+mabdelaa:	104683	104693 		104417 
+mabdulka:	104701	104707 		104459 
+mkompal:	104059  104087          104527
+mkompall:	104089  104107          104537
+ntippart:	104113  104119          104543
+pvargas:	104711	104717 		104471 
+smelton:	104723	104729 		104473 
+smilanko :	104003	104009		104479 
+spopuri:	104021	104033		104491 
+zli:		104047	104053		104513 

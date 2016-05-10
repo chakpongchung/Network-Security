@@ -1,0 +1,12 @@
+#! /bin/sh
+# syntax: sendsignmail  <receipient-login>   <file> <sender_login>
+if test $# -le 1
+then
+  echo  "syntax: sendsignmail  <receipient-login>   <file> <sender_login>"
+  exit
+fi
+
+RANDFILE=randomfile
+export RANDFILE
+openssl smime -sign -in $2 -out $2.sig -signer $3_cert.pem -inkey $3_privatekey.pem 
+# Mail $1 < $2.sig

@@ -1,0 +1,57 @@
+assignment 1 for cs772:network security
+
+submitted by Chak Pong CHUNG, 01009608
+
+Acknowledgement: The solution heavily use the code snippts provided by Dr.Wahab in this course website, which makes my life much easier.
+
+How I do it    : I use python to write the solution with ipython notebook. For those who do not want to setup the editting enviroment, 
+				you can view the code with the following private link:
+				http://nbviewer.ipython.org/gist/chakpongchung/30f4b49f9d400d3a1e14
+			It is also saved in a1-sol.ipynb, which is a json file.
+
+ANSWER FOR PROBLEM 1:
+
+the plain text is the following
+
+(1) I lived and loved the following three countries: Egypt, Canada and the United States of America.
+(2) I have taught Network Security Concepts: Protocols & Programming eight times in the last ten years.
+(3) I love my family: Mother, Father, Sisters, Brothers, Wife, Daughter & Son.
+(4) I love the Computer Scince Depratmnet of Old Dominion University in Norfolk, Virgina.
+
+the number of rails used is 9
+
+ANSWER FOR PROBLEM 2:
+
+the key from wahab.jpg is
+'uzfijeagywnslkhxqmtodpbc vr' (excluding the  '')
+
+the plain text is 
+
+'(2) I have taught Network Security Concepts: Protocols & Programming eight times in the last ten years.\n(3) I love my family: Mother, Father, Sisters, Brothers, Wife, Daughter & Son.\n(4) I love the Computer Scince Depratmnet of Old Dominion University in Norfolk, Virgina.\n(1) I lived and loved the following three countries: Egypt, Canada and the United States of America.\n'
+
+ANSWER FOR PROBLEM 3:
+
+the key is:
+"xyz"
+
+
+the plain text is:
+(3) I love my family: Mother, Father, Sisters, Brothers, Wife, Daughter & Son.
+(4) I love the Computer Scince Depratmnet of Old Dominion University in Norfolk, Virgina.
+(1) I lived and loved the following three countries: Egypt, Canada and the United States of America.
+(2) I have taught Network Security Concepts: Protocols & Programming eight times in the last ten years.
+
+ANSWER FOR PROBLEM 4:
+
+the plain text is 
+
+(4) I love the Computer Scince Depratmnet of Old Dominion University in Norfolk, Virgina.
+(1) I lived and loved the following three countries: Egypt, Canada and the United States of America.
+(2) I have taught Network Security Concepts: Protocols & Programming eight times in the last ten years.
+(3) I love my family: Mother, Father, Sisters, Brothers, Wife, Daughter & Son.
+
+the key is:
+"zyx"
+
+
+

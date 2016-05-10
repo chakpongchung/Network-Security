@@ -1,0 +1,7 @@
+To demo the  propgram:
+% more letter
+% embed vatican.jpg letter vatican2.jpg
+% decode vatican2.jpg /tmp/letter2
+% more /tmp/letter2
+Look at the two images: vatican & vatican2 and you will see no difference!
+

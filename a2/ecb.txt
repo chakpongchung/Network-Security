@@ -1,0 +1,49 @@
+4.     Consider the following Kiddie Encryption Algorithm (KEA):
+The Input data block size and encryption key length is 8 bits & the number of rounds is 2.
+ 
+The steps of each round are:
+1. XOR the data block with the encryption key.
+2. Substitute each nibble (4 bits) of the result using the following S-table.
+3. Permute the output  & the key by swapping their two nibbles.
+
+messeage: AAAA
+IV: BB  1011 1011
+key: CC 1100 1100
+
+S-Table
+0   1
+1   5
+2   B
+3   2
+4   E
+5   A
+6   8
+7   4
+8   F
+9   7
+A   3
+B   D
+C   9
+D   C
+E   0
+F   6
+
+ECB
+round 1
+1010 1010 1010 1010 AAAA, input
+1100 1100 1100 1100 CCCC£¬key
+0110 0110 0110 0110 after XOR, they are 6,6,6,6
+1000 1000 1000 1000 after S-table substitution, they are 8,8,8,8
+1000 1000 1000 1000 ,permutated output
+1100 1100 1100 1100 ,permutated key
+
+round2
+0100 0100 0100 0100 ,after XOR, they are 4,4,4,4
+1110 1110 1110 1110 ,after S-table substitution, they are e,e,e,e
+1110 1110 1110 1110 ,permutated output
+1100 1100 1100 1100 ,permutated key
+so the result is EEEE
+
+
+
+

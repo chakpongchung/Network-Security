@@ -1,0 +1,4 @@
+#! /bin/sh
+rm -r  issued_certs ca_private_key student_cert_request submitted_requests signed_requests 
+rm *
+

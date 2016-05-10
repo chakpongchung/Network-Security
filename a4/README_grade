@@ -1,0 +1,14 @@
+Example: Quick Test for anyone:
+
+% cd
+% mkdir tmp
+% chmod og-rwx tmp
+% cp /home/cs772/public_html/fall15/assignments/a4/gradingScripts/* .
+
+To grade wahab submission:
+% ./grade  wahab 3826101211
+
+To grade your own as submission:
+% cp <your-directory>/<login>-SID.tar .
+./grade <login> <SID>
+

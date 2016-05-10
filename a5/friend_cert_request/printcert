@@ -1,0 +1,8 @@
+#! /bin/sh
+if test $# -eq 0 
+then
+     echo "error, usage: printcert-sh X  where cert complte name is X_cert.pem"
+     exit 0;
+fi
+
+openssl x509 -in $1_cert.pem -text -noout

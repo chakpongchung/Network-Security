@@ -1,0 +1,11 @@
+#! /bin/sh
+if test $# -eq 0 
+then
+     echo "error, usage: gencertreq-sh <login_name>"
+     exit 0;
+fi
+cp /home/cs772/randomfile $HOME/.rnd
+openssl req -newkey rsa:1024 -keyout $1_privatekey.pem -keyform PEM -out $1_certreq.pem  -outform PEM
+chmod a+rx  $1_certreq.pem 
+chmod a+rx ../$1_cert_request
+chmod a+rx $HOME

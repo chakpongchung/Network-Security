@@ -1,0 +1,9 @@
+#! /bin/sh
+OPENSSL_CONF="`pwd`/myopenssl.cnf"
+echo $OPENSSL_CONF
+RANDFILE=randomfile
+export OPENSSL_CONF RANDFILE
+openssl req -x509 -newkey rsa:1024 -out ca_cert.pem  -outform PEM -days 365
+cp ca_cert.pem $HOME/public_html/fall14/PKI_certificates/students/ca_cert.pem
+chmod a+rx $HOME/public_html/fall14/PKI_certificates/students/ca_cert.pem
+

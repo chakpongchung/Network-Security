@@ -1,0 +1,11 @@
+#! /bin/sh
+OPENSSL_CONF=`pwd`/myopenssl.cnf
+RANDFILE=randomfile
+export OPENSSL_CONF RANDFILE
+
+if test $# -eq 0 
+then
+     echo "error, usage: certoreq-sh X  where the cert complte name is X_cert.pem"
+     exit 0;
+fi
+openssl x509 -x509toreq -in $1_cert.pem -out $1_certreq.pem -signkey $1_privatekey.pem

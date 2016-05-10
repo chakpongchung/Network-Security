@@ -1,0 +1,8 @@
+#! /bin/sh
+cp $HOME/randomfile .
+cp $HOME/randomfile    $HOME/.rnd
+rm -rf index*  issued_certs  ca_private_key submitted_requests  signed_requests
+mkdir issued_certs  ca_private_key submitted_requests  signed_requests
+chmod    og-rwx ca_private_key
+echo "01" > serial
+touch   index.txt
