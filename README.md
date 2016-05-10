@@ -10,8 +10,11 @@ https://github.com/chakpongchung/Network-Security/blob/master/a1/a1-sol.ipynb
 2.Some widely used Encryption Standard  like DES, IDEA, AES-128, IKEA
 
 Description:http://www.cs.odu.edu/~cs772/fall15/assignments/a2/a2.html
+
 DES:https://github.com/chakpongchung/Network-Security/blob/master/a2/a2_1.ipynb
+
 IDEA:https://github.com/chakpongchung/Network-Security/blob/master/a2/a2_2.ipynb
+
 AES:https://github.com/chakpongchung/Network-Security/blob/master/a2/a2_3.ipynb
 
 3.Message Digest   has many applications among which are:  Encryption & Message Authentication
