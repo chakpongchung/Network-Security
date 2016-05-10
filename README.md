@@ -2,12 +2,12 @@
 
 Some of the projects using openSSL
 
-1.simple Encryption and Decryption scheme
+1.Basic Encryption and Decryption scheme
 
 http://www.cs.odu.edu/~cs772/fall15/assignments/a1/a1.htm
 https://github.com/chakpongchung/Network-Security/blob/master/a1/a1-sol.ipynb
 
-2. Some widely used Encryption Standard  like DES, IDEA, AES-128, IKEA
+2.Some widely used Encryption Standard  like DES, IDEA, AES-128, IKEA
 
 Description:http://www.cs.odu.edu/~cs772/fall15/assignments/a2/a2.html
 DES:https://github.com/chakpongchung/Network-Security/blob/master/a2/a2_1.ipynb
